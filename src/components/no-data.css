@@ -1,0 +1,21 @@
+.nodata_main_container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0px;
+}
+.illustration_container {
+  height: auto;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.illustration_container img {
+  height: 100%;
+  width: 100%;
+}
