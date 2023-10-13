@@ -1,0 +1,13 @@
+.appbar_main .MuiAppBar-root {
+  background-color: #fba92c;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.appbar_main_scroll .MuiAppBar-root {
+  background-color: var(--theme-red);
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}

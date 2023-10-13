@@ -1,16 +1,6 @@
-import { Grid, TextField } from "@mui/material";
-
-let formKeys = [
-  { name: "firstName", label: "First name" },
-  { name: "lastName", label: "Last name" },
-  { name: "email", label: "Email" },
-  { name: "phone", label: "Phone" },
-  { name: "city", label: "City" },
-  { name: "state", label: "State" },
-  { name: "country", label: "Country" },
-  { name: "postalcode", label: "Postal Code" },
-  { name: "address", label: "Address", width: 12 },
-];
+import { useTheme } from "@mui/material/styles";
+import { Grid, TextField, useMediaQuery } from "@mui/material";
+import { formKeys } from "../../utils/constants";
 
 function ContactForm({
   formValues,
@@ -19,6 +9,9 @@ function ContactForm({
   touched,
   setTouched,
 }) {
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
+
   const handleChange = (e) => {
     setformValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -28,9 +21,15 @@ function ContactForm({
 
   return (
     <div>
-      <Grid container rowSpacing={3} columnSpacing={10}>
+      <Grid container rowSpacing={3} columnSpacing={isMdDown ? 2 : 10}>
         {formKeys.map((item, index) => (
-          <Grid item md={item.width ?? 6} key={index}>
+          <Grid
+            item
+            md={item.width ?? 6}
+            sm={item.width ?? 6}
+            xs={item.width ?? 6}
+            key={index}
+          >
             <TextField
               required
               onBlur={handleBlur}

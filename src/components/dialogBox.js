@@ -37,6 +37,7 @@ export default function DialogBox({
           Cancel
         </Button>
         <LoadingButton
+          type="submit"
           variant="contained"
           color={"primary"}
           onClick={handleSubmit}

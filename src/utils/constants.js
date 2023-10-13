@@ -49,3 +49,15 @@ export const initialFormValues = {
   country: "",
   postalcode: "",
 };
+
+export const formKeys = [
+  { name: "firstName", label: "First name" },
+  { name: "lastName", label: "Last name" },
+  { name: "email", label: "Email" },
+  { name: "phone", label: "Phone" },
+  { name: "city", label: "City" },
+  { name: "state", label: "State" },
+  { name: "country", label: "Country" },
+  { name: "postalcode", label: "Postal Code" },
+  { name: "address", label: "Address", width: 12 },
+];

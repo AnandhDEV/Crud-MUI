@@ -6,6 +6,8 @@ import ContactForm from "./form";
 import { createPortal } from "react-dom";
 import DialogBox from "../../components/dialogBox";
 import { initialFormValues } from "../../utils/constants";
+import Navbar from "../../layout/navbar";
+import Footer from "../../layout/footer";
 
 function Home() {
   const [open, setOpen] = useState(false);
@@ -29,7 +31,8 @@ function Home() {
     setOpen(true);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     let { id, ...rest } = formValues;
     let values = Object.keys(rest);
     if (values.some((item) => formValues[item] === "")) {
@@ -70,10 +73,11 @@ function Home() {
 
   return (
     <>
+      <Navbar />
       <div className="home_main_container">
         <div className="home_content_container">
           <div className="home_table_header_container">
-            <Typography variant="h3" color={"secondary"}>
+            <Typography variant="h4" color={"secondary"}>
               Contact
             </Typography>
 
@@ -116,6 +120,7 @@ function Home() {
         />,
         document.body
       )}
+      <Footer />
     </>
   );
 }
