@@ -88,7 +88,7 @@ function Home() {
                 setisEdit(false);
               }}
             >
-              Add Contact
+              Add Contacts
             </Button>
           </div>
           <div className="home_table_container">
